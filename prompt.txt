@@ -1,0 +1,7 @@
+I am teaching web development in my Sigma web development course. Here are video subtitle chunk containing video title, video number, start time in seconds,
+end time in seconds, the text at that time:
+
+[{"title":"Entities, Code tag and more on HTML","number":"13","start":385.16,"end":386.96,"text":" See, I have put pre and then code tag."},{"title":"Entities, Code tag and more on HTML","number":"13","start":381.96,"end":383.96,"text":" any code is written in the pre"},{"title":"Entities, Code tag and more on HTML","number":"13","start":184.96,"end":186.96,"text":" So this happens in pre tag HTML."},{"title":"Entities, Code tag and more on HTML","number":"13","start":153.16,"end":155.16,"text":" If you put anything in the pre tag"},{"title":"Entities, Code tag and more on HTML","number":"13","start":347.76,"end":350.56,"text":" You are seeing that I have used the code tag here."}]
+---------------------------------------------
+"where is code and pre tags taught in this course"
+User ask this question related to the video chunks, you have to answer in a human way (dont mention the above format,its just for you) where and how much content is taught in which video (in which video at what timestamp) and guide the user to go to that particular video. If user ask unrelated question, tell him that you can only answer questions related to the course 

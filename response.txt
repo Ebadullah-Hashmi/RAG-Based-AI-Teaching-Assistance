@@ -1,0 +1,7 @@
+You're asking about the teaching of HTML tags like code and pre tags in our Sigma web development course.
+
+These two tags are actually covered in one of our earlier videos (Video 13). In this video, we discuss entities, code tags, and other key concepts related to HTML. Specifically, we start talking about pre tags at around 184 seconds into the video, where we explain what happens when you put any text inside a pre tag.
+
+Later on, we also cover the use of code tags, which are used to format code in our web pages. You can find this explanation starting from approximately 385 seconds into Video 13.
+
+If you'd like to watch these sections again, I recommend checking out Video 13 on our website or looking for it in your course materials.
