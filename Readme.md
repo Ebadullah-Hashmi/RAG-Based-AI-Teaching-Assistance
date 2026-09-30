@@ -20,3 +20,16 @@
 ## Step 5:- Prompt generation and feeding to LLM
 
 -> Read the joblib file and load it into the memory. Then create a relevent prompt as per the user query and feed it to the LLM
+
+**Basic Requirements**:
+
+Install ollam in pc
+
+pull ollama bge-m3
+
+whisper v-2 model(for translation task)
+
+Intall libraries torch,python version:3.10 or 3.12(in between),pandas,numpy,joblib,scikit-learn,json,request
+Torch is for Gpu usage if you have it.You can run without gpu but it will take too much time for processing.
+
+Another way if you have any openai api key can configure it with translation task and for preprocess json work.
