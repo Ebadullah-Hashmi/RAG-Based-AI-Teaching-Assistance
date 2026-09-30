@@ -21,7 +21,8 @@
 
 -> Read the joblib file and load it into the memory. Then create a relevent prompt as per the user query and feed it to the LLM
 
-**Basic Requirements**:
+
+### Basic Requirements:
 
 Install ollam in pc
 
