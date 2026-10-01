@@ -24,7 +24,7 @@ df = load_embeddings()
 
 def create_embedding(text):
     # Hugging Face ki free API bge-m3 embeddings ke liye
-    api_url = "https://api-inference.huggingface.co/pipeline/feature-extraction/BAAI/bge-m3"
+    api_url = "https://api-inference.huggingface.co/models/BAAI/bge-m3"
     headers = {"Authorization": f"Bearer {HF_TOKEN}"}
     
     response = requests.post(api_url, headers=headers, json={"inputs": text})
