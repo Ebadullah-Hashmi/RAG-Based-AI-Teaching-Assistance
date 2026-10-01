@@ -47,7 +47,7 @@ def inference_llama(prompt):
 # 3. Streamlit UI Elements
 incoming_query = st.text_input("Ask Question here", placeholder="e.g., where is html start point in the video")
 
-if st.button("Jawab Dein"):
+if st.button("Answer"):
     if incoming_query:
         try:
             with st.spinner("Find answer please wait. (Embeddings & Llama 3.2 working)..."):
