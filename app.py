@@ -45,12 +45,12 @@ def inference_llama(prompt):
     return response.choices[0].message.content
 
 # 3. Streamlit UI Elements
-incoming_query = st.text_input("Apna sawal yahan likhein...", placeholder="e.g., CSS grid kis video mein hai?")
+incoming_query = st.text_input("Ask Question here", placeholder="e.g., where is html start point in the video")
 
 if st.button("Jawab Dein"):
     if incoming_query:
         try:
-            with st.spinner("Jawab dhoondh raha hai (Embeddings & Llama 3.2 working)..."):
+            with st.spinner("Find answer please wait. (Embeddings & Llama 3.2 working)..."):
                 # A. Get embedding
                 question_embedding = create_embedding(incoming_query)
                 
