@@ -7,15 +7,15 @@ import joblib
 import os
 from groq import Groq
 
-
+# 1. API Keys ko environment variables se load karna
 HF_TOKEN = os.environ.get("HF_TOKEN")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
-# Title
+# 2. Streamlit Title
 st.title("Sigma Web Development RAG Bot")
 st.write("Ask questions about the web development course videos.")
 
-
+# 3. Embeddings ko cache karna taake app fast chale
 @st.cache_resource
 def load_embeddings():
     return joblib.load("embeddings.joblib")
@@ -23,8 +23,8 @@ def load_embeddings():
 df = load_embeddings()
 
 def create_embedding(text):
-    # Hugging Face ki free API bge-m3 embeddings ke liye
-    api_url = "https://api-inference.huggingface.co/models/BAAI/bge-m3"
+    # Hugging Face feature-extraction API for bge-m3
+    api_url = "https://api-inference.huggingface.co/pipeline/feature-extraction/BAAI/bge-m3"
     headers = {"Authorization": f"Bearer {HF_TOKEN}"}
     
     response = requests.post(api_url, headers=headers, json={"inputs": text})
@@ -35,7 +35,6 @@ def create_embedding(text):
     return response.json()[0]
 
 def inference_llama(prompt):
-    
     client = Groq(api_key=GROQ_API_KEY)
     response = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
@@ -44,13 +43,13 @@ def inference_llama(prompt):
     )
     return response.choices[0].message.content
 
-# 3. Streamlit UI Elements
+# 4. Streamlit UI Elements
 incoming_query = st.text_input("Ask Question here", placeholder="e.g., where is html start point in the video")
 
 if st.button("Answer"):
     if incoming_query:
         try:
-            with st.spinner("Find answer please wait. (Embeddings & Llama 3.2 working)..."):
+            with st.spinner("Finding answer, please wait (Embeddings & Llama 3.2 working)..."):
                 # A. Get embedding
                 question_embedding = create_embedding(incoming_query)
                 
@@ -72,11 +71,11 @@ if st.button("Answer"):
                 (dont mention the above format,its just for you) where and how much content is taught 
                 in which video (in which video at what timestamp) and guide the user to go to that particular video. 
                 If user ask unrelated question, tell him that you can only answer questions related to the course.'''
-
                 
+                # D. Get Answer from Groq
                 answer = inference_llama(prompt)
                 
-               
+                # E. Display Result
                 st.success("Answer:")
                 st.write(answer)
                 
